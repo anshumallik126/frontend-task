@@ -1,0 +1,36 @@
+
+@mixin image-style
+    object-fit: cover
+    width: 100%
+
+@mixin displayNone
+    display: none !important
+
+@mixin display-flex
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+
+@mixin align-self($str)
+    -webkit-align-self: #{$str}
+    -moz-align-self: #{$str}
+    -ms-align-self: #{$str}
+    -o-align-self: #{$str}
+    align-self: #{$str}
+
+@mixin align-items($str)
+    -webkit-align-items: #{$str}
+    -moz-align-items: #{$str}
+    -ms-align-items: #{$str}
+    -o-align-items: #{$str}
+    align-items: #{$str}
+
+@mixin border-radius($border-radius-size...)
+    -webkit-border-radius: $border-radius-size
+    -moz-border-radius: $border-radius-size
+    border-radius: $border-radius-size
+
+@mixin font-style-italic
+    font-style: italic
+    -webkit-font-style: italic
+    -ms-font-style: italic

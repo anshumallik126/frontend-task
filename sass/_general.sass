@@ -1,0 +1,74 @@
+.theme-btn
+    line-height: 45px
+    padding: 0 20px
+    font-size: 1rem
+    position: relative
+    display: inline-block
+    color: $color-primary
+    background-color: transparent
+    transition: all 0.3s ease-out
+    font-family: $font-body
+    font-weight: 500
+    text-transform: capitalize
+    border-radius: 0
+    border: 2px solid $color-primary
+    text-align: center
+    &:hover
+        background-color: $color-primary
+        opacity: 0.9
+        color: #000 !important
+        box-shadow: inset 150px 0 0 0 $color-primary
+    &.bg-primary
+        background: $color-primary !important
+        color: #000
+        &:hover
+            background: $color-secondary !important
+            box-shadow: inset 150px 0 0 0 $color-secondary
+            border: 2px solid $color-secondary
+.owl-dots
+    display: flex
+    justify-content: center
+    position: absolute
+    width: 100%
+    left: 0
+    bottom: 20px
+    .owl-dot
+        width: 18px !important
+        height: 18px !important
+        margin: 5px
+        border-radius: 50%
+        background: #e6e6e6
+        background: none
+        border: 2px solid rgba(255, 255, 255, 0.5)
+        outline: none !important
+        position: relative
+        -webkit-transition: .3s all ease
+        -o-transition: .3s all ease
+        transition: .3s all ease
+        display: inline-block
+        &.active
+            span
+                background: $color-primary !important
+        span
+            position: absolute
+            width: 12px
+            height: 12px
+            background: rgba(255, 255, 255, 0.5)
+            border-radius: 50% !important
+            left: 50%
+            top: 50%
+            display: block
+            transform: translate(-50%, -50%)
+.text-secondary
+    color: $color-secondary !important
+.fa-2x
+    font-size: 1.3em
+.close
+    float: right
+    font-size: 1.5rem
+    font-weight: 700
+    line-height: 1
+    color: $text-color
+    text-shadow: 0 1px 0 #fff
+    opacity: .5
+    cursor: pointer

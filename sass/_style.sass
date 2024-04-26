@@ -1,0 +1,457 @@
+// navbar css
+// top header
+.header
+    position: absolute
+    width: 100%
+    z-index: 99
+    background: #fff
+    &.onscroll
+        width: 100%
+        position: fixed
+        z-index: 999
+        animation: navscroll .5s forwards
+.top-panel
+    background: $color-primary
+    height: 35px
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    @media #{$small-only}
+        display: none
+    h4
+        font-size: 14px
+        text-transform: capitalize
+        font-weight: 300
+        letter-spacing: 0.2px
+        line-height: 21px
+        color: #fff
+        text-align: center
+        font-family: Merriweather Sans
+        font-style: italic
+    .closebtn
+        color: #fff
+        cursor: pointer
+        font-size: 16px
+        position: absolute
+        right: 20px
+.nav-section
+    border-bottom: 1px solid #EEEDEB
+    position: relative
+    .container
+        display: flex
+        align-items: center
+        justify-content: start
+        max-width: 1250px
+        height: 68px
+        @media #{$small-only}
+            justify-content: space-between
+    .logo
+        margin-right: 20px
+        a
+            .logo-text
+                font-size: 30px
+                font-weight: 400
+                text-decoration: none
+                white-space: nowrap
+                text-transform: uppercase
+                color: $color-primary
+                @media #{$small-only}
+                    font-size: 1.1rem
+                &:hover
+                    color: $color-primary
+    .nav-wrapper
+        z-index: 1022
+        position: fixed
+        height: 100%
+        top: 0
+        right: 0
+        width: 100%
+        max-width: 100%
+        display: block
+        right: -100%
+        transition: .5s
+        opacity: 0
+        @media only screen and (min-width: 1300px)
+            all: unset
+            flex: 0 0 50%
+            display: flex
+            position: static
+            .close
+                display: none
+        &.toggle
+            right: 0
+            opacity: 1
+            padding: 5px
+            background: #fff
+    @keyframes navscroll
+        0%
+            top: -60px
+        100%
+            top: 0
+    .navigation
+        margin-top: 20px
+        li.nav-item
+            margin: 0 12px
+            @media #{$small-only}
+                padding: 5px 0
+                border-bottom: 1px solid $color-secondary
+            &.active a.nav-link, &:hover a.nav-link
+                color: $color-primary !important
+                background: $color-secondary
+                border-radius: 100px
+                @media #{$small-only}
+                    background: transparent
+            a.nav-link
+                color: $color-primary
+                padding: 4px 12px
+                display: inline-block
+                white-space: nowrap
+                text-transform: capitalize
+                transition: .4s
+                font-weight: 300
+                font-family: $font-body
+                @include font-style-italic
+                @media #{$small-only}
+                    display: block
+                    font-style: normal
+                    &::after
+                        content: "\f061"
+                        font-family: "Font Awesome 6 Free"
+                        font-weight: 900
+                        margin-left: 5px
+                        float: right
+                &:hover
+                    color: $color-primary !important
+                    border-top-color: $color-primary
+                .offer-text
+                    color: #3057A7
+                    font-weight: 700
+                    font-size: 10px
+                    position: absolute
+                    top: 20px
+                    padding-left: 2px
+                    @media #{$small-only}
+                        display: none
+        .has-sub-menu
+            position: relative
+            #drop-icon
+                color: white
+                float: right
+                line-height: 35px
+                padding: 0 8px
+                display: none
+                @media #{$extra-large-and-down}
+                    display: inline
+            @media #{$extra-large-and-down}
+                a
+                    i
+                        display: none
+            &:hover
+                .sub-menu
+                    top: 100%
+                    opacity: 1
+                    visibility: visible
+            .sub-menu
+                position: absolute
+                top: 130%
+                left: -20px
+                background: #121212
+                min-width: 200px
+                padding: 0
+                transition: .3s
+                opacity: 0
+                visibility: hidden
+                box-shadow: 1px 1px 5px rgb(0 0 0 / 10%)
+
+                @media #{$extra-large-and-down}
+                    position: static
+                    opacity: 1
+                    visibility: visible
+                    background: none
+                    display: none
+                    transition: none
+                li
+                    margin: 0
+                    border-bottom: 1px solid #343131
+                    &:last-child
+                        border-bottom: none
+                a
+                    color: #fff !important
+                    padding: 10px 15px
+                    &:hover
+                        color: $color-secondary
+                    @media #{$large-and-down}
+                        color: white
+
+        @media only screen and (min-width: 1300px)
+            all: unset
+            display: flex
+            list-style: none
+
+    .nav-icons
+        display: flex
+        align-items: center
+
+        .user-icon
+            border-bottom: 1px solid transparent
+            display: inline-block
+            @media #{$small-only}
+                border-bottom: none !important
+            &:hover
+                border-bottom: 1px solid white
+        #menu-bar
+            @media only screen and (min-width: 1300px)
+                display: none !important
+.nav-wrapper
+    .mega_menu
+        left: 0
+        right: 0
+        background: #fff
+        display: flex
+        flex-wrap: wrap
+        transition: 0.5s
+    ul
+        li
+            margin: 15px 0
+            .mega_menu_item_left
+                width: 25%
+                @media #{$small-only}
+                    width: 100%
+                h3
+                    margin-bottom: 15px
+                    color: $color-primary
+                    font-size: 28px
+                    line-height: 32px
+                    @media #{$small-only}
+                        font-size: 16px
+                img
+                    width: 100%
+                a
+                    color: $color-primary
+                    font-size: 18px
+                    line-height: 27px
+                    font-weight: 300
+                    font-style: italic
+            .mega_menu
+                visibility: hidden
+                opacity: 0
+                position: absolute
+                top: 102%
+                padding: 40px 60px
+                @media #{$small-only}
+                    padding: 10px
+                &.menu-open
+                    position: relative
+                    opacity: 1
+                    visibility: visible
+            &:hover
+                & > ul
+                    visibility: visible
+                    opacity: 1
+                    margin-top: 0px
+                    z-index: 99
+                & > .mega_menu
+                    visibility: visible
+                    opacity: 1
+                    margin-top: 0
+                    z-index: 99
+            .mega_menu_item_right
+                width: 75%
+                @media #{$small-only}
+                    width: 100%
+            .mega_menu_item_middle
+                width: 50%
+                @media #{$small-only}
+                    width: 100%
+            .mega_menu_item_right_data
+                width: 25%
+                @media #{$small-only}
+                    width: 100%
+        .owl-nav
+            div
+                position: absolute
+                line-height: 50px
+                padding: 0
+                text-align: center
+                color: #000
+                margin: 0
+                cursor: pointer
+                transition: 0.3s
+                font-size: 16px
+                top: -15%
+                transition: all linear .3s
+            .owl-next
+                left: auto
+                right: 0
+            .owl-prev
+                right: 2%
+                color: #f2f2f2
+.featured-title
+    font-size: 18px
+    color: $color-primary
+    margin-bottom: 15px
+    font-style: italic
+.single-box
+    position: relative
+    .product-title
+        position: absolute
+        bottom: 10px
+        left: 10px
+        p
+            font-size: 8px
+            line-height: 9px
+            letter-spacing: 1.6px
+            font-style: italic
+            color: #828282
+        h3
+            font-size: 18px
+            line-height: 27px
+            letter-spacing: 0.3px
+            font-style: italic
+            font-weight: 300
+            color: $color-primary
+            @media #{$small-only}
+                font-size: 12px
+.subscription
+    display: flex
+    justify-content: space-between
+    gap: 20px
+    .subscription-card
+        flex: 0 0 50%
+        max-width: 50%
+        background: #F2F2F2
+        img
+            height: 200px
+        .subscription-card-content
+            padding: 12px 13px
+            p
+                font-size: 8px
+                line-height: 9px
+                letter-spacing: 1.6px
+                font-style: italic
+                color: #828282
+            h3
+                font-size: 16px
+                line-height: 27px
+                letter-spacing: 0.3px
+                font-style: italic
+                font-weight: 300
+                color: $color-primary
+            .price
+                color: #3057A7
+                font-size: 14px
+                line-height: 21px
+                @include font-style-italic
+
+// Index page css
+.home-slider
+    position: relative
+    .owl-carousel
+        .item
+            height: 100vh
+            min-height: 780px
+            width: 100%
+            background-size: cover
+            background-position: center
+            display: flex
+            align-items: center
+            .slider-content
+                padding: 150px 0
+        .owl-prev
+            position: absolute
+            left: 15px
+            top: 51%
+            background: none
+            font-size: 1.5rem
+            line-height: 45px
+            &:hover
+                background: none
+        .owl-next
+            position: absolute
+            right: 15px
+            top: 50%
+            background: none
+            font-size: 1.5rem
+            line-height: 45px
+            &:hover
+                background: none
+        .owl-nav
+            margin-top: 0
+        .owl-dots
+            position: absolute
+            bottom: 70px
+            left: 50%
+            transform: translateX(-50%)
+            .owl-dot
+                span
+                    background: #fff
+                    width: 12px
+                    height: 12px
+                    transition: .3s
+.tab-container
+    border-radius: 4px
+    width: 60%
+    .tab-menu
+        ul
+            margin: 0
+            padding: 0
+            li
+                list-style-type: none
+                display: inline-block
+                margin: 0
+                a
+                    text-decoration: none
+                    color: $color-primary
+                    padding: 7px 15px
+                    font-size: 18px
+                    font-weight: 400
+                    @include font-style-italic
+                    &.active-a
+                        color: #3057A7
+                        border-bottom: 1px solid #3057A7
+.tab
+    display: none
+    margin-top: 30px
+    .tab-content
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+    .item
+        margin-bottom: 20px
+        text-align: center
+        width: 33.33%
+        @media #{$small-only}
+            width: 50%
+        .icon-img
+            width: 50px
+            height: 50px
+            line-height: 50px
+            text-align: center
+            position: relative
+            display: inline-flex
+            vertical-align: middle
+            border-radius: 50px
+            align-items: center
+            justify-content: center
+            margin-bottom: 20px
+            border: 1px solid #EEEDEB
+            img
+                height: 24px
+                width: 24px
+                vertical-align: middle
+    &.tab-active
+        display: block
+.product_category
+    padding: 20px
+    transition: 0.3s
+    .best-seller
+        font-size: 10px
+        color: $color-primary
+        font-weight: 500
+    .show-all-btn
+        font-size: 10px
+        color: #3057A7
+    &.hide
+        display: none !important
